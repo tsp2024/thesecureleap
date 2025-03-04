@@ -4,8 +4,8 @@ export const navbarLinks = [
     route: "#teams",
   },
   {
-    label: "Articles",
-    route: "/articles",
+    label: "Membership",
+    route: "/membership",
   },
   {
     label: "Subscription",
