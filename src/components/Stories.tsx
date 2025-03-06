@@ -1,6 +1,4 @@
-export const revalidate = 0;
-
-("use client");
+"use client";
 
 import React, { useState } from "react";
 
