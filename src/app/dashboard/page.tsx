@@ -14,6 +14,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import DashboardContent from "@/components/DashboardContent";
+import Link from "next/link";
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
@@ -40,13 +41,15 @@ const Dashboard = () => {
     <section className="min-h-fit absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] text-white">
       <div className="flex items-center mb-20 mt-[-40px]">
         <div className="flex flex-1 items-center space-x-4">
-          <Image
-            src="/main-logo-crop.png"
-            draggable="false"
-            alt="Logo"
-            width={150}
-            height={25}
-          />
+          <Link href="/">
+            <Image
+              src="/main-logo-crop.png"
+              draggable="false"
+              alt="Logo"
+              width={150}
+              height={25}
+            />
+          </Link>
 
           <div className="h-8 border border-1 w-0 border-white" />
           <h1 className="text-xl font-semibold">Dashboard</h1>
