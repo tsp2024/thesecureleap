@@ -103,7 +103,7 @@ async function NewsTable() {
   );
 }
 async function StoriesTable() {
-  const stories = await db.stories.findMany();
+  const stories = await db.stories.findMany({ orderBy: { id: "asc" } });
 
   if (!stories.length) return <p className="ml-4 mt-1">No Stories found.</p>;
 
