@@ -43,29 +43,18 @@ const Page = () => {
                 Sukamal Banerjee
               </CardDescription>
 
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="w-auto px-4 py-2 rounded-xl absolute right-2 md:right-4 bottom-2 md:bottom-4 dark:bg-black dark:text-white">
-                    Read
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="dark:bg-white dark:text-black">
-                  <DialogHeader>
-                    <DialogTitle className="text-center">
-                      INSIGHTS POWER PLANT CHEMISTRY
-                    </DialogTitle>
-                    <DialogDescription>
-                      <iframe
-                        src="https://newsletterspdf.s3.amazonaws.com/chemistry.pdf#toolbar=0"
-                        title="Insights Power Plant Chemistry"
-                        className="w-full"
-                        height="500"
-                        style={{ border: "none" }}
-                      ></iframe>
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
+              <Button
+                className="w-auto px-4 py-2 rounded-xl absolute right-2 md:right-4 bottom-2 md:bottom-4 dark:bg-black dark:text-white"
+                asChild
+              >
+                <a
+                  href="https://newsletterspdf.s3.amazonaws.com/chemistry.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read
+                </a>
+              </Button>
             </CardHeader>
           </Card>
         </div>
