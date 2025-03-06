@@ -95,10 +95,6 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
           });
 
           setMembership("PREMIUM");
-
-          setTimeout(() => {
-            router.refresh();
-          }, 500);
         },
         prefill: {
           email: session.user.email,
@@ -112,6 +108,10 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
       toast.error("Payment failed. Please try again.");
     } finally {
       setLoading(false);
+
+      setTimeout(() => {
+        router.refresh();
+      }, 500);
     }
   };
 
