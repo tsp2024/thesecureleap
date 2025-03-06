@@ -98,7 +98,7 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
 
           setTimeout(() => {
             router.refresh();
-          }, 3000);
+          }, 500);
         },
         prefill: {
           email: session.user.email,
