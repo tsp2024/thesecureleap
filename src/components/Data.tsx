@@ -1,5 +1,3 @@
-export const revalidate = 0;
-
 import db from "@/db/db";
 import Stories from "./Stories";
 
