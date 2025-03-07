@@ -3,10 +3,10 @@ export const freePlan = [
     title: "Access to Newsletters",
   },
   {
-    title: "Information on Internship Opportunities",
+    title: "Priority access to internship opportunities",
   },
   {
-    title: "Information on Volunteering Opportunities",
+    title: "Priority access to Volunteering opportunities",
   },
   {
     title: "Update on upcoming events and Tech fests",
@@ -45,16 +45,16 @@ export const premiumPlan = [
     title: "Access to Newsletters",
   },
   {
-    title: "Information on Internship Opportunities",
+    title: "Priority access to internship opportunities",
   },
   {
-    title: "Information on Volunteering Opportunities",
+    title: "Priority access to Volunteering opportunities",
   },
   {
     title: "Update on upcoming events and Tech fests",
   },
   {
-    title: "Free guidance session",
+    title: "1 Free guidance session",
   },
   {
     title: "Support to Publish research papers in scholarly journals",
