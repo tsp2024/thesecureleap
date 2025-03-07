@@ -3,10 +3,10 @@ export const freePlan = [
     title: "Access to Newsletters",
   },
   {
-    title: "Priority access to internship opportunities",
+    title: "Information on internship opportunities",
   },
   {
-    title: "Priority access to Volunteering opportunities",
+    title: "Information on volunteering opportunities",
   },
   {
     title: "Update on upcoming events and Tech fests",
