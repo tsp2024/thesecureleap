@@ -5,7 +5,7 @@ import Stories from "./Stories";
 
 const StoriesSection = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
