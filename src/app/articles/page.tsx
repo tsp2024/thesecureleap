@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -90,4 +90,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
