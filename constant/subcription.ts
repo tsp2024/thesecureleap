@@ -15,7 +15,7 @@ export const freePlan = [
 
 export const notIncluded = [
   {
-    title: "1 Free Strategic intervention session",
+    title: "1 Free strategic intervention session",
   },
   {
     title: "Support to Publish research papers in scholarly journals",
@@ -54,7 +54,7 @@ export const premiumPlan = [
     title: "Update on upcoming events and Tech fests",
   },
   {
-    title: "1 Free Strategic intervention session",
+    title: "1 Free strategic intervention session",
   },
   {
     title: "Support to Publish research papers in scholarly journals",
