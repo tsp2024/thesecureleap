@@ -2,15 +2,15 @@
 
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { useTransition } from "react";
-import { deleteStories } from "./_action/stories";
 import { useRouter } from "next/navigation";
+import { deleteArticle } from "./_action.ts/articles";
 
 interface Props {
-  id: number;
+  id: string;
   disabled?: boolean;
 }
 
-export function DeleteStoriesAction({ id, disabled }: Props) {
+export function DeleteArticleAction({ id, disabled }: Props) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
@@ -20,7 +20,7 @@ export function DeleteStoriesAction({ id, disabled }: Props) {
       onClick={() => {
         if (window.confirm("Are you sure you want to delete ?")) {
           startTransition(async () => {
-            await deleteStories(id);
+            await deleteArticle(id);
             router.refresh();
           });
         }

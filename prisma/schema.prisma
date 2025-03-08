@@ -35,3 +35,10 @@ enum Membership {
   FREE
   PREMIUM
 }
+
+model Article {
+  id      String @id @default(uuid())
+  title   String
+  author  String
+  pdfData Bytes
+}

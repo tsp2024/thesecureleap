@@ -18,7 +18,9 @@ import {
 import db from "@/db/db";
 import { MoreVertical } from "lucide-react";
 import Link from "next/link";
-import { DeleteDropDownItem } from "./news/newsActions";
+import { DeleteArticleAction } from "./articles/articleAction";
+import { DeleteStoriesAction } from "./stories/storiesActions";
+import { DeleteNewsAction } from "./news/newsActions";
 
 const page = () => {
   return (
@@ -51,6 +53,21 @@ const page = () => {
         </div>
 
         <StoriesTable />
+      </div>
+
+      <div className="mt-10">
+        <div className="p-4 flex items-center gap-4">
+          <div className="flex-1">
+            <h1 className="font-semibold text-4xl">Articles</h1>
+          </div>
+          <div className="">
+            <Button asChild>
+              <Link href="/admin/articles">Add Articles</Link>
+            </Button>
+          </div>
+        </div>
+
+        <ArticleTable />
       </div>
     </>
   );
@@ -94,7 +111,7 @@ async function NewsTable() {
                   <DropdownMenuItem asChild>
                     <Link href={`/admin/news/${news.id}/edit`}>Edit</Link>
                   </DropdownMenuItem>
-                  <DeleteDropDownItem id={news.id} />
+                  <DeleteNewsAction id={news.id} />
                 </DropdownMenuContent>
               </DropdownMenu>
             </TableCell>
@@ -137,7 +154,45 @@ async function StoriesTable() {
                   <DropdownMenuItem asChild>
                     <Link href={`/admin/stories/${story.id}/edit`}>Edit</Link>
                   </DropdownMenuItem>
-                  <DeleteDropDownItem id={story.id} />
+                  <DeleteStoriesAction id={story.id} />
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+}
+async function ArticleTable() {
+  const stories = await db.article.findMany({ orderBy: { id: "asc" } });
+
+  if (!stories.length) return <p className="ml-4 mt-1">No Article found.</p>;
+
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Title</TableHead>
+          <TableHead>Description</TableHead>
+          <TableHead className="w-0">
+            <span>Actions</span>
+          </TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {stories.map((story) => (
+          <TableRow key={story.id}>
+            <TableCell>{story.title}</TableCell>
+            <TableCell className="line-clamp-2">{story.author}</TableCell>
+
+            <TableCell>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="hover:bg-zinc-200 rounded-full p-1">
+                  <MoreVertical />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DeleteArticleAction id={story.id} />
                 </DropdownMenuContent>
               </DropdownMenu>
             </TableCell>

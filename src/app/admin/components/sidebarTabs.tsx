@@ -18,6 +18,10 @@ const Links = [
     href: "/admin/stories",
   },
   {
+    label: "Articles",
+    href: "/admin/articles",
+  },
+  {
     label: "Users",
     href: "/admin/users",
   },
