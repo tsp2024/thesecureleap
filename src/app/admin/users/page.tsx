@@ -29,6 +29,7 @@ const page = async () => {
           <TableHeader>
             <TableRow>
               <TableHead>Sr. No.</TableHead>
+              <TableHead>Full Name</TableHead>
               <TableHead>Email</TableHead>
               <TableHead>Phone</TableHead>
               <TableHead>Membership</TableHead>
@@ -39,6 +40,7 @@ const page = async () => {
             {users.map((user, index) => (
               <TableRow key={index}>
                 <TableCell>{index + 1}</TableCell>
+                <TableCell>{user.fullName}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.phone}</TableCell>
                 <TableCell>{user.membership}</TableCell>
