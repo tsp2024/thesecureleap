@@ -1,7 +1,5 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import db from "@/db/db";
 import Link from "next/link";
-import React from "react";
 
 const page = async () => {
   const news = await db.news.findMany();

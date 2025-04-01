@@ -121,10 +121,10 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
         <Card className="">
           <CardHeader>
             <div className="flex items-center mb-5">
-              <p className="flex-1">FREE PLAN</p>
+              <p className="flex-1">STANDARD PLAN : ₹249</p>
               <div className="flex items-center space-x-1 border border-zinc-500 rounded-lg w-fit p-1">
                 <div className="size-3 bg-blue-500 rounded-full animate-pulse" />
-                <p className="text-xs">FREE</p>
+                <p className="text-xs">STANDARD PLAN</p>
               </div>
             </div>
             <Button
@@ -133,17 +133,6 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
             >
               Subscribed
             </Button>
-
-            <p className="text-sm text-center">
-              The free membership plan now includes services worth ₹249 at no
-              extra cost. For more details, contact{" "}
-              <a
-                href="mailto:info@raucheducation.com"
-                className="hover:underline text-blue-600 hover:text-blue-800"
-              >
-                info@raucheducation.com
-              </a>
-            </p>
           </CardHeader>
 
           {freePlan.map(({ title }) => (
@@ -164,7 +153,7 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
         <Card className="bg-zinc-800 border-zinc-950 text-white">
           <CardHeader>
             <div className="flex items-center mb-5">
-              <p className="flex-1">PREMIUM PLAN</p>
+              <p className="flex-1">PREMIUM PLAN : ₹4199</p>
               <div className="flex items-center space-x-1 border border-zinc-100 rounded-lg w-fit p-1">
                 <Star
                   className="size-3 animate-pulse"
