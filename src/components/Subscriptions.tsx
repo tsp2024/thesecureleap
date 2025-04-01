@@ -133,6 +133,17 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
             >
               Subscribed
             </Button>
+
+            <p className="text-sm text-center">
+              The free membership plan now includes services worth ₹249 at no
+              extra cost. For more details, contact{" "}
+              <a
+                href="mailto:info@raucheducation.com"
+                className="hover:underline text-blue-600 hover:text-blue-800"
+              >
+                info@raucheducation.com
+              </a>
+            </p>
           </CardHeader>
 
           {freePlan.map(({ title }) => (
