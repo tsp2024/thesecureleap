@@ -2,8 +2,8 @@
 
 import db from "@/db/db";
 import { z } from "zod";
-import fs from "fs/promises";
 import { notFound, redirect } from "next/navigation";
+import { del, put } from "@vercel/blob";
 
 const fileSchema = z.instanceof(File, { message: "Required" });
 const imageSchema = fileSchema.refine(
@@ -25,19 +25,20 @@ export async function addStories(prevState: unknown, formData: FormData) {
 
   const data = result.data;
 
-  await fs.mkdir("public/storiesImages", { recursive: true });
-  const image = `/storiesImages/${crypto.randomUUID()}-${data.image.name}`;
-  await fs.writeFile(
-    `public${image}`,
-    //@ts-ignore
-    new Uint8Array(await data.image.arrayBuffer())
+  const blob = await put(
+    `stories/${crypto.randomUUID()}-${data.image.name}`,
+    data.image,
+    {
+      access: "public",
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    }
   );
 
   await db.stories.create({
     data: {
       title: data.title,
       description: data.description,
-      image,
+      image: blob.url,
     },
   });
 
@@ -66,17 +67,15 @@ export async function updateStories(
 
   let image = stories.image;
 
-  //@ts-ignore
-  if (data.image !== null && data.image.size > 0) {
-    await fs.unlink(`public${stories.image}`).catch(() => {});
-
-    //@ts-ignore
-    image = `/storiesImages/${crypto.randomUUID()}-${data.image.name}`;
-    await fs.writeFile(
-      `public${image}`,
-      //@ts-ignore
-      new Uint8Array(await data.image.arrayBuffer())
+  if (data.image && data.image.size > 0) {
+    const blob = await put(
+      `stories/${crypto.randomUUID()}-${data.image.name}`,
+      data.image,
+      {
+        access: "public",
+      }
     );
+    image = blob.url;
   }
 
   await db.stories.update({
@@ -96,7 +95,11 @@ export async function deleteStories(id: number) {
 
   if (!stories) return notFound();
 
-  await fs.unlink(`public${stories.image}`).catch(() => {});
+  try {
+    await del(stories.image);
+  } catch (error) {
+    console.error("Error deleting image from Vercel Blob:", error);
+  }
 
   await db.stories.delete({ where: { id } });
 }
