@@ -121,7 +121,7 @@ const Subscriptions = ({ user }: SubscriptionsProps) => {
         <Card className="">
           <CardHeader>
             <div className="flex items-center mb-5">
-              <p className="flex-1">STANDARD PLAN : ₹249</p>
+              <p className="flex-1">STANDARD PLAN : ₹500</p>
               <div className="flex items-center space-x-1 border border-zinc-500 rounded-lg w-fit p-1">
                 <div className="size-3 bg-blue-500 rounded-full animate-pulse" />
                 <p className="text-xs">STANDARD PLAN</p>
