@@ -44,7 +44,8 @@ const DashboardContent = () => {
       <div className="">
         <div className="mt-[-15px] mb-10 text-lg">
           <h1 className="">
-            Hello, {session?.user?.name} ({user?.membership} Plan)
+            Hello, {session?.user?.name} (
+            {user?.membership === "FREE" ? "STANDARD" : "PREMIUM"} Plan)
           </h1>
         </div>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
