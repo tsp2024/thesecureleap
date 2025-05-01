@@ -58,7 +58,7 @@ const TabsSection = () => {
                   it!
                 </p>
                 <Link
-                  href="https://sway.cloud.microsoft/CzICy2rGO6zga4Hi?ref=Link&loc=play"
+                  href="https://outlook.office365.com/book/StudentPackageStandard@rauchlss.com/"
                   className="flex items-center mt-2 text-blue-800 underline underline-offset-4"
                   target="_blank"
                 >
@@ -110,7 +110,7 @@ const TabsSection = () => {
                   Be successful by making your employees successful!
                 </p>
                 <Link
-                  href="https://sway.cloud.microsoft/LlC2bZU02vLwGF5N?ref=Link"
+                  href="https://outlook.office365.com/book/Enterprise@rauchlss.com/"
                   className="flex items-center mt-2 text-blue-800 underline underline-offset-4"
                   target="_blank"
                 >
