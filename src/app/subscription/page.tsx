@@ -74,7 +74,7 @@ export default function PricingSection() {
                       <h1>{name}</h1>
                     </CardItem>
                   ))}
-                  <CardItem className="my-0.5 mx-auto">
+                  {/* <CardItem className="my-0.5 mx-auto">
                     {detailsPage === "" ? (
                       <h1 className="text-gray-400 mx-auto text-lg">
                         Subscription Details
@@ -88,7 +88,7 @@ export default function PricingSection() {
                         Subscription Details
                       </Link>
                     )}
-                  </CardItem>
+                  </CardItem> */}
 
                   <CardItem className="mx-auto mt-6">
                     {href === "" ? (
