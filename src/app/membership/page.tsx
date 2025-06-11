@@ -3,16 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { toast } from "sonner";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const phoneSchema = z.object({
   phone: z.string().regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
@@ -75,22 +74,9 @@ const Page = () => {
   };
 
   return (
-    <section className="min-h-fit absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
-      <div className="flex items-center space-x-4 mb-20 mt-[-40px]">
-        <Link href="/">
-          <Image
-            src="/main-logo-crop.png"
-            draggable="false"
-            alt="Logo"
-            width={150}
-            height={25}
-          />
-        </Link>
-        <div className="h-8 border border-1 w-0 border-white" />
-        <h1 className="text-xl font-semibold text-white">Memberships</h1>
-      </div>
+    <section className="py-10 md:py-16 lg:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-extrabold text-center mb-6 text-white">
+        <h2 className="text-5xl font-extrabold text-center mb-6">
           Elevate Your Membership Experience
         </h2>
       </div>
@@ -100,7 +86,7 @@ const Page = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col space-y-5 mb-5">
-          <Label htmlFor="email" className="text-white text-md">
+          <Label htmlFor="email" className=" text-md">
             Email Address:
           </Label>
           {session ? (
@@ -120,7 +106,7 @@ const Page = () => {
           ) : (
             <Button
               className="flex items-center justify-center space-x-3"
-              variant="secondary"
+              variant="default"
               onClick={handleGoogleSignIn}
               type="button"
             >
@@ -136,7 +122,7 @@ const Page = () => {
         </div>
 
         <div className="flex flex-col space-y-5">
-          <Label htmlFor="phone" className="text-white text-md">
+          <Label htmlFor="phone" className="text-md">
             Phone Number:
           </Label>
           <Input

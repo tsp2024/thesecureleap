@@ -1,89 +1,82 @@
-import React from "react";
-import { contributingMembers, coreMembers } from "../../constant/teamMembers";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { contributingMembers, coreMembers } from "../../constant/teamMembers";
+import { ReadMoreDialog } from "./ReadMoreDialog";
 
 const TeamMembers = () => {
   return (
-    <div id="teams">
-      <div className="mt-28">
-        <h1 className="font-semibold text-3xl text-center sm:text-5xl underline underline-offset-8 mb-2 sm:mb-7">
-          OUR TEAM
-        </h1>
-      </div>
-
-      <div className="">
-        <h2 className="mx-2 sm:mx-10 font-semibold text-center sm:text-left text-2xl sm:text-4xl">
-          Core Members
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5">
-          {coreMembers.map(({ detail, img, name, profession }, index) => (
-            <div
-              className="max-w-sm mx-auto bg-gray-200/70 rounded-lg shadow-lg overflow-visible relative mt-16 hover:scale-105 transition-all"
-              key={name}
-            >
-              <div className="absolute inset-x-0 top-[-48px] flex justify-center">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <hr />
+      <div className="py-24 md:py-26">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              Our Core Team
+            </h2>
+          </div>
+          <ul
+            role="list"
+            className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
+          >
+            {coreMembers.map(({ detail, img, name, profession }) => (
+              <li key={name}>
                 <Image
-                  className={cn(
-                    "w-24 h-24 rounded-full border-2 border-gray-300",
-                    index === 2 ? "object-fill" : "object-cover"
-                  )}
+                  className="aspect-[3/2] w-full rounded-2xl object-cover"
                   src={img}
-                  alt="Profile"
-                  loading="lazy"
-                  draggable="false"
-                  width={100}
-                  height={100}
+                  alt={`${name}'s profile picture`}
+                  width={500}
+                  height={500}
+                  draggable={false}
                 />
-              </div>
-              <div className="pt-16 pb-6 px-6 mb-20">
-                <p className="text-gray-700 mb-4">{detail}</p>
-              </div>
-              <div className="absolute bottom-2 left-4">
-                <h3 className="text-lg font-bold text-gray-900 mt-36">
+                <h3 className="mt-6 text-lg/8 font-semibold text-gray-900">
                   {name}
                 </h3>
-                <p className="text-gray-600">{profession}</p>
-              </div>
-            </div>
-          ))}
+                <p className="text-base/7 text-gray-600">{profession}</p>
+                <p className="mt-4 text-base/7 text-gray-600 line-clamp-2">
+                  {detail}
+                </p>
+                {detail && detail.split(" ").length > 30 && (
+                  <ReadMoreDialog title={name} content={detail} />
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      <div className="mt-16">
-        <h2 className="mx-2 sm:mx-10 font-semibold text-center sm:text-left text-2xl sm:text-4xl">
-          Contributing Members
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5">
-          {contributingMembers.map(({ detail, img, name, profession }) => (
-            <div
-              className="max-w-sm mx-auto bg-gray-200/70 rounded-lg shadow-lg overflow-visible relative mt-16 hover:scale-105 transition-all"
-              key={name}
-            >
-              <div className="absolute inset-x-0 top-[-48px] flex justify-center">
+      <div className="md:pb-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              Our Contributing Team
+            </h2>
+          </div>
+          <ul
+            role="list"
+            className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
+          >
+            {contributingMembers.map(({ detail, img, name, profession }) => (
+              <li key={name}>
                 <Image
-                  className="w-24 h-24 rounded-full border-2 border-gray-300 object-cover"
+                  className="aspect-[3/2] w-full rounded-2xl object-cover"
                   src={img}
-                  alt="Profile"
-                  loading="lazy"
-                  draggable="false"
-                  width={100}
-                  height={100}
+                  alt={`${name}'s profile picture`}
+                  width={500}
+                  height={500}
+                  draggable={false}
                 />
-              </div>
-              <div className="pt-16 pb-6 px-6 mb-20">
-                <p className="text-black mb-4 text-center">{detail}</p>
-              </div>
-              <div className="absolute bottom-2 left-4">
-                <h3 className="text-lg font-bold text-gray-900 mt-36">
+                <h3 className="mt-6 text-lg/8 font-semibold text-gray-900">
                   {name}
                 </h3>
-                <p className="text-gray-600">{profession}</p>
-              </div>
-            </div>
-          ))}
+                <p className="text-base/7 text-gray-600">{profession}</p>
+                <p className="mt-4 text-base/7 text-gray-600 line-clamp-2">
+                  {detail}
+                </p>
+                {detail && detail.split(" ").length > 30 && (
+                  <ReadMoreDialog title={name} content={detail} />
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Stories from "./Stories";
+import { Feature } from "./ui/feature-slideshow";
 
 const StoriesSection = () => {
   const [data, setData] = useState([]);
@@ -29,7 +29,7 @@ const StoriesSection = () => {
     );
   }
 
-  return <Stories data={data} />;
+  return <Feature featureItems={data} />;
 };
 
 export default StoriesSection;

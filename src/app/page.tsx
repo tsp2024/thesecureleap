@@ -1,21 +1,15 @@
+import { AIMLabTestimonials } from "@/components/AIMLLabTestimonials";
+import { CTASection } from "@/components/CTASection";
 import StoriesSection from "@/components/Data";
-import Footer from "@/components/Footer";
-import StickyNavbar from "@/components/Navbar";
-import Popup from "@/components/Popup";
-import ProjectAyanna from "@/components/Project-Ayanna";
-import Slider from "@/components/Slider";
-import TabsSection from "@/components/TabsSection";
-import TeamMembers from "@/components/TeamMembers";
-
+import { HeroSection } from "@/components/HeroSection";
+import { Testimonials } from "@/components/Testimonials";
 export default function Home() {
   return (
     <div className="">
-      <StickyNavbar />
-      <Slider />
-      <Popup />
+      <HeroSection />
+      {/* <Popup /> */}
 
-      <div className="" id="secure">
-        {/* <h1 className="font-semibold text-3xl sm:text-4xl underline underline-offset-8">
+      {/* <h1 className="font-semibold text-3xl sm:text-4xl underline underline-offset-8">
           WHY THESECURELEAP?
         </h1>
         <p className="font-normal max-w-7xl leading-8">
@@ -28,44 +22,17 @@ export default function Home() {
           challenges.
         </p> */}
 
-        <div className="mb-20 lg:mt-[-310px]">
-          <h1 className="font-bold text-3xl sm:text-6xl text-center sm:mb-4">
-            VISION
-          </h1>
-          <p className="font-normal leading-8 text-lg md:text-2xl text-center mx-2 md:mx-10 lg:mx-16">
-            To empower individuals with skills, knowledge and confidence to
-            build a successful career, while fostering a more impartial and
-            innovative world by accessing, transformative education
-            opportunities.
-          </p>
-        </div>
+      <AIMLabTestimonials />
 
-        <div className="">
-          <h1 className="font-bold text-3xl sm:text-6xl text-center sm:mb-4">
-            MISSION
-          </h1>
-          <p className="font-normal leading-8 text-lg md:text-2xl text-center mx-2 md:mx-10 lg:mx-16">
-            Our mission is to equip individuals with skills, strategies and
-            techniques to enable them to build a foundation helpful in bridging
-            the wide gap between education and confidence needed to thrive in
-            the workforce.
-          </p>
-        </div>
-
-        <TabsSection />
-      </div>
-
-      <div className="">
-        <h1 className="font-semibold text-3xl text-center sm:text-5xl">
-          Stories
-        </h1>
+      <div className="mb-10">
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance my-10">
+          STORIES
+        </h2>
         <StoriesSection />
       </div>
 
-      <ProjectAyanna />
-      <TeamMembers />
-
-      <Footer />
+      <Testimonials />
+      <CTASection />
     </div>
   );
 }

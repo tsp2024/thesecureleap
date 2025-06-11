@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import Stories from "./Stories";
 import Image from "next/image";
+import { useState } from "react";
 
 const ProjectAyannaData = [
   {

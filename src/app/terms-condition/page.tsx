@@ -1,28 +1,13 @@
-import React from "react";
-import Link from "next/link";
-import { HomeIcon } from "lucide-react";
-
 const TermsOfService = () => {
   return (
     <div className="min-h-full">
-      <div className="absolute top-4 left-4">
-        <Link href="/">
-          <p className="text-gray-700 hover:text-gray-900 flex items-center space-x-2">
-            <HomeIcon
-              className="text-xl md:text-2xl lg:text-3xl p-1 rounded-full bg-white shadow-lg"
-              size={30}
-            />
-          </p>
-        </Link>
-      </div>
-
       <div className="h-[70vh] gradient-bg-footer flex items-center justify-center">
         <h1 className="text-white font-semibold text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
           Terms of Service
         </h1>
       </div>
 
-      <div className="px-4 py-8 md:px-8 lg:px-12 xl:px-16">
+      <div className="px-4 py-8 md:px-8 lg:px-12 xl:px-16 max-w-[90rem] mx-auto">
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
